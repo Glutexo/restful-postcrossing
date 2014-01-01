@@ -9,10 +9,10 @@
 (function() {
     var restfulUrlRegExp = /^http:\/\/www\.postcrossing\.com\/([A-Z]+)-?(\d+)$/i;
     var receiveUrlRegExp = /^http:\/\/www\.postcrossing\.com\/receive\?receive\[country_code\]=([A-Z]+)&receive\[number\]=(\d+)$/i;
-    var upperCaseHref = window.location.href.toUpperCase();
+    var href = window.location.href;
     
     // The URL is RESTful: www.postcrossing.com/CC-123456
-    var restfulUrlMatch = upperCaseHref.match(restfulUrlRegExp);
+    var restfulUrlMatch = href.match(restfulUrlRegExp);
     if(restfulUrlMatch) {
         var country_code = restfulUrlMatch[1];
         var number = restfulUrlMatch[2];
@@ -24,7 +24,7 @@
     }
     
     // Already redirected to the receive page.
-    var receiveUrlMatch = upperCaseHref.match(receiveUrlRegExp);
+    var receiveUrlMatch = href.match(receiveUrlRegExp);
     if(receiveUrlMatch) {
         var country_code = receiveUrlMatch[1].toUpperCase();
         var number = receiveUrlMatch[2];
