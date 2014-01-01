@@ -1,6 +1,6 @@
 // ==UserScript== 
 // @name RESTful Postcrossing
-// @namespace http://www.hanafuda.cz/
+// @namespace https://github.com/Glutexo
 // @description Adds a RESTful way to register your Postcrossing cards.
 // @include http://www.postcrossing.com/* 
 // @grant none
